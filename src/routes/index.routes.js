@@ -1,5 +1,6 @@
 import { Router } from "express";
 import productsRoutes from "./products.routes.js";
+import usersRoutes from "./users.routes.js";
 import healthRoutes from "./health.routes.js";
 import { notFound } from "../middlewares/notFound.js";
 import { errorHandler } from "../middlewares/errorHandler.js";
@@ -8,6 +9,7 @@ const router = Router();
 
 // Cargamos las rutas de los distintos controladores
 router.use("/api/products", productsRoutes);
+router.use("/api/users", usersRoutes);
 router.use("/health", healthRoutes);
 
 // Control global del Error 404 - ruta no existe
