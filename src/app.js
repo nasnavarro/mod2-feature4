@@ -1,7 +1,11 @@
 import express from "express";
+import helmet from "helmet";
 import routes from './routes/index.routes.js';
 
 const app = express();
+
+// Añade cabeceras HTTP de seguridad automáticamente
+app.use(helmet());
 
 //Activamos JSON para APIs
 app.use(express.json());
